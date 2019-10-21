@@ -1,0 +1,44 @@
+package CleanCode.main.java.Planes;
+
+import java.util.Objects;
+
+/**
+ * version: 1.1
+ * @author Vitali Shulha
+ * 4-Jan-2019
+ */
+
+public class PassengerPlane extends Plane{
+
+    private final int passengersCapacity;
+
+    public PassengerPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, int passengersCapacity) {
+        super(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
+        this.passengersCapacity = passengersCapacity;
+    }
+
+    public int getPassengersCapacity() {
+        return passengersCapacity;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString().replace("}",
+                ", passengersCapacity=" + passengersCapacity +
+                '}');
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PassengerPlane)) return false;
+        if (!super.equals(o)) return false;
+        PassengerPlane plane = (PassengerPlane) o;
+        return passengersCapacity == plane.passengersCapacity;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), passengersCapacity);
+    }
+}
