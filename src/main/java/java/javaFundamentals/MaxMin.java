@@ -1,3 +1,4 @@
+package java.javaFundamentals;
 
 /**
  * Java Fundamentals. DataTypes: 1. Найти самое короткое и самое длинное число. Вывести найденные числа и их длину.

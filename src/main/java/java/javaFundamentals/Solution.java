@@ -1,3 +1,5 @@
+package java.javaFundamentals;
+
 import java.io.IOException;
 
 /**
@@ -7,8 +9,8 @@ import java.io.IOException;
 public class Solution {
     public static void main(String[] args) {
         StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < args.length; i++) {
-            builder.append(args[i] + " ");
+        for (String arg : args) {
+            builder.append(arg).append(" ");
         }
         String str = builder.toString();
         System.out.println("Hello " + str);
